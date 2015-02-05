@@ -1,0 +1,8 @@
+<h1><%= @hood.name %></h1>
+
+<h3>The Needs</h3>
+<ol>
+<% @needs.each do |need| %>
+	<li><%= need.title + " - " + need.reason + " submitted by " + User.find(need.user_id).name %></li>
+<% end %>
+</ol>

@@ -1,0 +1,11 @@
+<h1><%= @user.name %>'s Page</h1>
+
+<h2>Your Hood: <%= link_to @user.hood.name, hood_path(@user.hood) %></h2>
+<h3>Your Needs</h3>
+<ol>
+<% @user.needs.each do |need| %>
+	<li><%= need.title + " - " + need.reason %></li>
+<% end %>
+</ol>
+
+<%= link_to "Add a Need", new_need_path %>

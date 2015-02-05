@@ -1,0 +1,9 @@
+<h1>Add a Need<h1>
+
+<%= form_for @need, url: {action: "create"} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :reason %>
+  <%= f.text_area :reason, size: "60x12" %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>All Hoods</h1>
+<h2>Please choose one: </h2>
+
+<ul>
+	<% @hoods.each do |hood| %>
+	<li><%= link_to hood.name, user_path(hood: {name: hood.name}) %></li>
+	<% end %>
+</ul>
+
+
+
+<!-- 
+link_to "Profile", controller: "profiles", action: "show", id: @profile
+# => <a href="/profiles/show/1">Profile</a>
+ -->

@@ -1,0 +1,7 @@
+<h1>Welcome to Communeedy!</h1>
+
+<% if !@user %>
+	<h3>Please <%= link_to "sign in", "/auth/facebook", id: "sign_in" %> via Facebook to continue!<h3>
+<% else %>
+	<%= link_to "My User Page", user_path(@user) %>
+<% end %>

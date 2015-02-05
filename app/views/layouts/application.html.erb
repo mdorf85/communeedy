@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<div id="user-widget">
+  <% if current_user %>
+    Welcome <%= link_to current_user.name, user_path(current_user.id) %>!
+    <%= link_to "Home", root_path %>
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div>
+
+<%= flash[:notice] %>
 <%= yield %>
 
 </body>
