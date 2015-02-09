@@ -1,4 +1,6 @@
 class Hood < ActiveRecord::Base
 	has_many :needs
-	belongs_to :user
+	has_many :users
+
+	require 'Cities'
 end

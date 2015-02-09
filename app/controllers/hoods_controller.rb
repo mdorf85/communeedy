@@ -9,7 +9,6 @@ class HoodsController < ApplicationController
 	end
 
 	def show
-		# binding.pry
 		@hood = Hood.find(params[:id])
 		@user = User.find(session[:user_id])
 		@needs = @hood.needs

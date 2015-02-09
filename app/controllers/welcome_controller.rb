@@ -5,3 +5,5 @@ class WelcomeController < ApplicationController
 		end
 	end
 end
+
+#reset_session if need be for testing

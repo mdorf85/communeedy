@@ -6,7 +6,8 @@ class NeedsController < ApplicationController
 	def create
 		@need = Need.new(need_params)
 		@user = User.find(session[:user_id])
-		@hood = Hood.find(@user.hood)
+		# binding.pry
+		@hood = Hood.find(@user.hood_id)
 		@user.needs << @need
 		@hood.needs << @need
 		@user.save

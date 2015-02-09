@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 20150130044155) do
 
   create_table "hoods", force: :cascade do |t|
     t.string   "name"
-    t.string   "city"
-    t.integer  "user_id"
+    t.string   "borough"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150130044155) do
     t.string   "name"
     t.string   "email"
     t.string   "image"
+    t.integer  "hood_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

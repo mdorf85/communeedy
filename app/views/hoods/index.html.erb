@@ -2,14 +2,13 @@
 <h2>Please choose one: </h2>
 
 <ul>
+	<h4><%= @hoods.first.borough %></h4>
+	<% prev_hood = @hoods.first %>
 	<% @hoods.each do |hood| %>
-	<li><%= link_to hood.name, user_path(hood: {name: hood.name}) %></li>
+		<% if hood.name < prev_hood.name %>
+			<h4><%= hood.borough %></h4>
+		<% end %>
+		<% prev_hood = hood %>
+		<li><%= link_to hood.name, user_path(hood: {id: hood.id}, id: session[:user_id]) %></li>
 	<% end %>
 </ul>
-
-
-
-<!-- 
-link_to "Profile", controller: "profiles", action: "show", id: @profile
-# => <a href="/profiles/show/1">Profile</a>
- -->

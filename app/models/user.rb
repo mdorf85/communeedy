@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :needs
-	has_one :hood
+	belongs_to :hood
 
 	def self.create_with_omniauth(auth)
 		# binding.pry
